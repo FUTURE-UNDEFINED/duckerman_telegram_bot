@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+backend-path = ["."]
+
+[project]
+name = "duck_sticker_helper"
+version = "0.1.0"
+requires-python = ">=3.8"
+dependencies = [
+    "cachetools>=5.5.2",
+    "grpcio-tools>=1.70.0",
+    "python-telegram-bot>=21.6",
+    "wheel>=0.45.1",
+]
+
+[tool.setuptools]
+packages = ["generated", "telegram_bot"]
+package-dir = { "" = "src" }
+
+[project.scripts]
+telegram_bot = "telegram_bot.app:main"
